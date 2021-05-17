@@ -1,0 +1,43 @@
+{
+    "name": "tanthammar/tall-window-size",
+    "description": "A description for tall-window-size.",
+    "type": "package",
+    "license": "MIT",
+    "keywords": [
+        "laravel"
+    ],
+    "authors": [
+        {
+            "name": "Tina Hammar",
+            "email": "tinahammar@gmail.com"
+        }
+    ],
+    "require": {
+        "php": "^8.0",
+        "illuminate/support": "^8.0",
+        "livewire/livewire": "^2.4.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "Tanthammar\\TallWindowSize\\": "./src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tanthammar\\TallWindowSize\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Tanthammar\\TallWindowSize\\TallWindowSizeServiceProvider"
+            ]
+        }
+    },
+    "require-dev": {
+        "orchestra/testbench": "^6.0"
+    }
+}
