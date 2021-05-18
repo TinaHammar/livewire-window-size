@@ -1,4 +1,4 @@
-# tall-window-size
+# Laravel Livewire Window Size and Breakpoints
 Laravel blade directives and php helpers to dynamically generate content based on browser window size WITHOUT css. Requires Livewire and AlpineJS
 
 An example to show the purpose of this package:
@@ -13,8 +13,8 @@ if(window2xl()) {
 
 
 [![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE.md)
-[![Travis](https://img.shields.io/travis/tanthammar/tall-window-size.svg?style=flat-square)]()
-[![Total Downloads](https://img.shields.io/packagist/dt/tanthammar/tall-window-size.svg?style=flat-square)](https://packagist.org/packages/tanthammar/tall-window-size)
+[![Travis](https://img.shields.io/travis/tanthammar/livewire-window-size.svg?style=flat-square)]()
+[![Total Downloads](https://img.shields.io/packagist/dt/tanthammar/livewire-window-size.svg?style=flat-square)](https://packagist.org/packages/tanthammar/livewire-window-size)
 
 # Requirements
 * php 8
@@ -46,13 +46,14 @@ whereas this package debounces a network request.
 
 ## Installation
 ```
-composer require tanthammar/tall-window-size`
+composer require tanthammar/livewire-window-size`
 ```
 
 ## Publish config
 ```
-composer require tanthammar/tall-window-size`
+php artisan vendor:publish --tag=livewire-window-size
 ```
+The default settings are based on TailwindCSS breakpoints
 ```php
 'window-width' => [
     // 0 = undefined|false
@@ -141,13 +142,18 @@ if(window2xl()) {
 Add the trait to a component to import config values and  get/set custom breakpoints dynamically.
 
 ```php 
-use Tanthammar\TallWindowSize\HasBreakpoints;
+use Tanthammar\LivewireWindowSize\HasBreakpoints;
 
 class Foo extends \Livewire\Component
 {
     use HasBreakpoints;
     ...
 }
+```
+## Blade directives test component
+Add this to any blade view to test the blade directives
+```blade 
+<x-breakpoints::test-windowsize />
 ```
 
 

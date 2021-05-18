@@ -1,6 +1,6 @@
 <?php
 
-namespace Tanthammar\TallWindowSize\Tests;
+namespace Tanthammar\LivewireWindowSize\Tests;
 
 use Orchestra\Testbench\TestCase as Orchestra;
 
@@ -16,7 +16,7 @@ class TestCase extends Orchestra
     protected function getPackageProviders($app)
     {
         return [
-            \Tanthammar\TallWindowSize\TallWindowSizeServiceProvider::class,
+            \Tanthammar\LivewireWindowSize\LivewireWindowSizeServiceProvider::class,
         ];
     }
 

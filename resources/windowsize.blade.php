@@ -1,4 +1,4 @@
-<div class="display-contents"
+<div class="hidden display-contents"
      x-data="{
         width: @entangle('width'),
         height: @entangle('height'),
@@ -11,7 +11,7 @@
      x-on:resize.window.debounce.750ms="update()"
 >
     {{-- dev test :) --}}
-    <div x-cloak>
+    {{-- <div x-cloak>
         <button class="p-4 rounded bg-indigo-500 text-white" x-on:click="$wire.call('render')">Click to trigger a
             request
         </button>
@@ -21,5 +21,5 @@
         <p>AlpineH: <span x-text="height"></span></p>
         <p>sessionW: {{session('windowW')}}</p>
         <p>sessionH: {{session('windowH')}}</p>
-    </div>
+    </div> --}}
 </div>

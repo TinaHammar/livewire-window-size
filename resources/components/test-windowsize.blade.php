@@ -1,6 +1,6 @@
 {{-- dev test :) --}}
-<div x-data x-cloak>
-    <p>-----</p>
+<div>
+    <p>---WIDTH---</p>
     @windowWidthLessThan(400)
     <div>windowWIDTHLessThan 400</div>
     @endif
@@ -10,7 +10,7 @@
     @windowWidthBetween(400, 1500)
     <div>windowWIDTHBetween 400, 1500</div>
     @endif
-    <p>-----</p>
+    <p>---HEIGHT---</p>
     @windowHeightLessThan(500)
     <div>windowHEIGHTLessThan 500</div>
     @endif
@@ -20,7 +20,7 @@
     @windowHeightBetween(400, 900)
     <div>windowHEIGHTBetween 400, 900</div>
     @endif
-    <p>------</p>
+    <p>---BREAKPOINTS---</p>
     @windowXs()
     <div class="text-2xl">Xs window</div>
     @endif
@@ -39,5 +39,5 @@
     @window2xl()
     <div class="text-2xl">2xl window</div>
     @endif
-    <p>-----</p>
+    <p>---END---</p>
 </div>

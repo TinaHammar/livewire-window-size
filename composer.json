@@ -1,5 +1,5 @@
 {
-    "name": "tanthammar/tall-window-size",
+    "name": "tanthammar/livewire-window-size",
     "description": "Laravel blade directives and php helpers to dynamically generate content based on browser window size WITHOUT css. Requires Livewire and AlpineJS",
     "type": "package",
     "license": "MIT",
@@ -22,12 +22,12 @@
     },
     "autoload": {
         "psr-4": {
-            "Tanthammar\\TallWindowSize\\": "./src"
+            "Tanthammar\\LivewireWindowSize\\": "./src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Tanthammar\\TallWindowSize\\Tests\\": "tests"
+            "Tanthammar\\LivewireWindowSize\\Tests\\": "tests"
         }
     },
     "scripts": {
@@ -36,7 +36,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Tanthammar\\TallWindowSize\\TallWindowSizeServiceProvider"
+                "Tanthammar\\LivewireWindowSize\\LivewireWindowSizeServiceProvider"
             ]
         }
     },

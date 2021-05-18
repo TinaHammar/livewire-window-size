@@ -1,6 +1,6 @@
 <?php
 
-namespace Tanthammar\TallWindowSize;
+namespace Tanthammar\LivewireWindowSize;
 
 use Livewire\Component;
 

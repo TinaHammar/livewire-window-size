@@ -1,11 +1,11 @@
 <?php
 
-namespace Tanthammar\TallWindowSize;
+namespace Tanthammar\LivewireWindowSize;
 
 use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\ServiceProvider;
 
-class TallWindowSizeServiceProvider extends ServiceProvider
+class LivewireWindowSizeServiceProvider extends ServiceProvider
 {
     /**
      * Register services.
@@ -24,7 +24,7 @@ class TallWindowSizeServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $this->publishes([__DIR__ . '/../config/breakpoints.php' => config_path('breakpoints.php')], 'livewire-breakpoints-config');
+        $this->publishes([__DIR__ . '/../config/breakpoints.php' => config_path('breakpoints.php')], 'livewire-window-size');
         $this->loadViewsFrom(__DIR__ . '/../resources/', 'breakpoints');
         \Livewire::component('breakpoints', WindowSize::class);
 

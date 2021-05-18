@@ -4,7 +4,7 @@
          colors="true"
 >
     <testsuites>
-        <testsuite name="tanthammar/tall-window-size Test Suite">
+        <testsuite name="tanthammar/livewire-window-size Test Suite">
             <directory>tests</directory>
         </testsuite>
     </testsuites>
