@@ -1,5 +1,5 @@
 # Laravel Livewire Window Size and Breakpoints
-Laravel `blade` directives and `php helpers` for **serverside rendered content**, based on browser window size WITHOUT css. Requires Livewire and AlpineJS
+Laravel `blade` directives and `php helpers` for **server side rendered content**, based on browser window size WITHOUT css. Requires Livewire and AlpineJS
 
 An example to show the purpose of this package:
 ```php 
@@ -27,7 +27,7 @@ if(window2xl()) {
 
 ## Description
 The main purpose of this package is not to avoid duplicated html, 
-but to avoid unnecessary serverside code execution, just to render content that will never be seen.
+but to avoid unnecessary server side code execution, just to render content that will never be seen.
 
 * AlpineJS syncs the browsers inner `width` and `height`, in realtime (debounced 750ms), when the browser window is resized. 
 * The corresponding Livewire component will store the values to the Laravel `Session`.
@@ -38,7 +38,7 @@ but to avoid unnecessary serverside code execution, just to render content that 
 * You can change the config dynamically with Laravel `Config::set(...)`
 
 # Important note
-It's important to understand the difference between the serverside rendered breakpoints, that this package provides, and css media queries. 
+It's important to understand the difference between the server side rendered breakpoints, that this package provides, and css media queries. 
 
 When using css, the content of the page will update in realtime as the user resizes the window, 
 whereas this package debounces a network request.
