@@ -1,8 +1,10 @@
 # Laravel Livewire Window Size and Breakpoints
-Laravel blade directives and php helpers for serverside rendered content, based on browser window size WITHOUT css. Requires Livewire and AlpineJS
+Laravel `blade` directives and `php helpers` for **serverside rendered content**, based on browser window size WITHOUT css. Requires Livewire and AlpineJS
 
 An example to show the purpose of this package:
 ```php 
+<?php
+
 if(windowXs()) {
  //execute a tiny Eloquent query and return a minimalistic view
 }
@@ -28,7 +30,7 @@ The main purpose of this package is not to avoid duplicated html,
 but to avoid unnecessary serverside code execution, just to render content that will never be seen.
 
 * AlpineJS syncs the browsers inner `width` and `height`, in realtime (debounced 750ms), when the browser window is resized. 
-* The corresponding Livewire component will store the values to `Session`.
+* The corresponding Livewire component will store the values to the Laravel `Session`.
 * The package has a `config/breakpoints` file where you set your breakpoints
 * The package provides multiple `@blade` directives and Laravel `helpers()`
 * You have access to the browser window width/height via `session('windowW')` and `session('windowH')`
@@ -37,16 +39,18 @@ but to avoid unnecessary serverside code execution, just to render content that 
 
 # Important note
 It's important to understand the difference between the serverside rendered breakpoints, that this package provides, and css media queries. 
-<br>When using css, the content of the page will update in realtime as the user resizes the window, 
+
+When using css, the content of the page will update in realtime as the user resizes the window, 
 whereas this package debounces a network request.
-<br>If you are using Livewire to generate dynamic content, the page will update in realtime with a slight lag (750ms) otherwise the content will update on the next page request.
-<br>It is therefore important that you place the `<livewire:breakpoints />` at first point of contact with the user, for your application to look its best.
-<br>I have it in my `app.blade.php` and on the `login`/`register` pages. 
+
+If you are using a Livewire, the component will update on its next request, otherwise the page will update on the next page request.
+
+It's important that you place the `<livewire:breakpoints />` at first point of contact with the user, for your application to look its best. I have it in my `app.blade.php` and on the `login`/`register` pages. 
 
 
 ## Installation
 ```
-composer require tanthammar/livewire-window-size`
+composer require tanthammar/livewire-window-size
 ```
 
 ## Publish config
@@ -68,7 +72,7 @@ The default settings are based on TailwindCSS breakpoints
 
 ## Add the component to your layout
 * Add this to all layouts where you want to keep track of the browser window size.
-* Then you have access to the browser window width/height via `session('windowW')` and `session('windowH')`
+* You will have access to the browser window width/height via `session('windowW')` and `session('windowH')`
 
 Example: `app.blade.php`
 ```blade
@@ -101,6 +105,7 @@ Example
 @windowXs()
 <div>This window is extra small</div>
 @endif
+
 @window2xl()
 <div>This window is very large</div>
 @endif
