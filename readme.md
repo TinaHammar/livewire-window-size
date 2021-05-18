@@ -1,5 +1,5 @@
 # Laravel Livewire Window Size and Breakpoints
-Laravel blade directives and php helpers to dynamically generate content based on browser window size WITHOUT css. Requires Livewire and AlpineJS
+Laravel blade directives and php helpers for serverside rendered content, based on browser window size WITHOUT css. Requires Livewire and AlpineJS
 
 An example to show the purpose of this package:
 ```php 

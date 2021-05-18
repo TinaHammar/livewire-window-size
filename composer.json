@@ -1,6 +1,6 @@
 {
     "name": "tanthammar/livewire-window-size",
-    "description": "Laravel blade directives and php helpers to dynamically generate content based on browser window size WITHOUT css. Requires Livewire and AlpineJS",
+    "description": "Laravel blade directives and php helpers for serverside rendered content, based on browser window size WITHOUT css. Requires Livewire and AlpineJS\n",
     "type": "package",
     "license": "MIT",
     "keywords": [
