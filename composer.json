@@ -1,10 +1,13 @@
 {
     "name": "tanthammar/tall-window-size",
-    "description": "A description for tall-window-size.",
+    "description": "Laravel blade directives and php helpers to dynamically generate content based on browser window size WITHOUT css. Requires Livewire and AlpineJS",
     "type": "package",
     "license": "MIT",
     "keywords": [
-        "laravel"
+        "laravel",
+        "livewire",
+        "alpine",
+        "breakpoints"
     ],
     "authors": [
         {

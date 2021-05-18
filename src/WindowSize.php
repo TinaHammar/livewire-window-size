@@ -17,16 +17,16 @@ class WindowSize extends Component
 
     public function updatedWidth(int $size): void
     {
-        session(['windowW' => $size]);
+        if(is_int($size) && $size > 0) session(['windowW' => $size]);
     }
 
     public function updatedHeight(int $size): void
     {
-        session(['windowH' => $size]);
+        if(is_int($size) && $size > 0) session(['windowH' => $size]);
     }
 
     public function render()
     {
-        return view('tall::winsize');
+        return view('breakpoints::windowsize');
     }
 }
