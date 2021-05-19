@@ -70,7 +70,7 @@ The default settings are based on TailwindCSS breakpoints
     'Md' => 768, // => @windowMd (>= 768px && < Lg)
     'Lg' => 1024, // => @windowLg (>= 1024px && < Xl)
     'Xl' => 1280, // => @windowXl (>= 1280px && < 2xl)
-    '2xl' => 1536, // => @window2xl (> 1536px)
+    '2xl' => 1536, // => @window2xl (>= 1536px)
 ],
 ```
 
@@ -165,9 +165,6 @@ Add this to any blade view to test the blade directives
 <x-breakpoints::test-windowsize />
 ```
 
-
-
-
 ## 💬 Let's connect
 Discuss with other tall-form users on the official Livewire Discord channel.
 You'll find me in the "partners/tall-forms" channel.
@@ -176,6 +173,7 @@ You'll find me in the "partners/tall-forms" channel.
 * [🔗 **Twitter**](https://twitter.com/TinaHammar)
 * [🔗 **Youtube**](https://www.youtube.com/channel/UCRPTsZ2OduwzGq3EdiynY2Q)
 * [🔗 **Devdojo**](https://devdojo.com/tinahammar)
+
 
 ## Changelog
 Please see [CHANGELOG](CHANGELOG.md) for more information what has changed recently.
