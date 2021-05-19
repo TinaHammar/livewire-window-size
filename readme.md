@@ -24,6 +24,10 @@ if(window2xl()) {
 * Livewire
 * AlpineJS
 
+# Do you want a pure Javascript version instead?
+There is a Laravel/VanillaJS version of this package. [Link >>>](https://github.com/TinaHammar/laravel-window-size)
+
+
 
 ## Description
 The main purpose of this package is not to avoid duplicated html, 
