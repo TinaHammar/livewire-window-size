@@ -173,6 +173,7 @@ You'll find me in the "partners/tall-forms" channel.
 * [🔗 **Twitter**](https://twitter.com/TinaHammar)
 * [🔗 **Youtube**](https://www.youtube.com/channel/UCRPTsZ2OduwzGq3EdiynY2Q)
 * [🔗 **Devdojo**](https://devdojo.com/tinahammar)
+*  🔗 Please 💗 [sponsor me](https://github.com/sponsors/tanthammar) if you like my work.
 
 
 ## Changelog
