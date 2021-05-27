@@ -9,7 +9,7 @@ trait HasBreakpoints
 
     public function mountHasBreakpoints()
     {
-        $this->setBreakpoints(config('tall-datatables.breakpoints', []));
+        $this->setBreakpoints(config('livewire-window-size.breakpoints', []));
     }
 
     public function getBreakpoints(): array
