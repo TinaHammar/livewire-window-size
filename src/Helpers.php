@@ -1,5 +1,7 @@
 <?php
 
+use Illuminate\Support\Arr;
+
 if (!function_exists('windowWidthLessThan')) {
     function windowWidthLessThan(int $value): bool
     {
@@ -15,11 +17,11 @@ if (!function_exists('windowWidthGreaterThan')) {
 }
 
 if (!function_exists('windowWidthBetween')) {
-    function windowWidthBetween(int $expression): bool
+    function windowWidthBetween(mixed ...$expression): bool
     {
-        $between = collect(explode(',', $expression));
+        $between = collect(Arr::flatten($expression));
         $w = session('windowW');
-        return ($w > $between->first()) && ($w < $between->last());
+        return ($w > $between->first() && $w < $between->last());
     }
 }
 
@@ -38,11 +40,11 @@ if (!function_exists('windowHeightGreaterThan')) {
 }
 
 if (!function_exists('windowHeightBetween')) {
-    function windowHeightBetween(int $expression): bool
+    function windowHeightBetween(mixed ...$expression): bool
     {
-        $between = collect(explode(',', $expression));
+        $between = collect(Arr::flatten($expression));
         $h = session('windowH');
-        return ($h > $between->first()) && ($h < $between->last());
+        return ($h > $between->first() && $h < $between->last());
     }
 }
 
@@ -50,8 +52,10 @@ if (!function_exists('windowXs')) {
     function windowXs(): bool
     {
         $w = session('windowW');
-        return ($w > 0) &&
-            ($w < config('breakpoints.window-width.Xs', 640));
+        return (
+            $w > 0
+            && $w < config('breakpoints.window-width.Xs', 640)
+        );
     }
 }
 
@@ -59,8 +63,10 @@ if (!function_exists('windowSm')) {
     function windowSm(): bool
     {
         $w = session('windowW');
-        return ($w >= config('breakpoints.window-width.Sm', 640))
-            && ($w < config('breakpoints.window-width.Md', 768));
+        return (
+            $w >= config('breakpoints.window-width.Sm', 640)
+            && $w < config('breakpoints.window-width.Md', 768)
+        );
     }
 }
 
@@ -68,8 +74,10 @@ if (!function_exists('windowMd')) {
     function windowMd(): bool
     {
         $w = session('windowW');
-        return ($w >= config('breakpoints.window-width.Md', 768))
-            && ($w < config('breakpoints.window-width.Lg', 1024));
+        return (
+            $w >= config('breakpoints.window-width.Md', 768)
+            && $w < config('breakpoints.window-width.Lg', 1024)
+        );
     }
 }
 
@@ -77,8 +85,10 @@ if (!function_exists('windowLg')) {
     function windowLg(): bool
     {
         $w = session('windowW');
-        return ($w >= config('breakpoints.window-width.Lg', 1024))
-            && ($w < config('breakpoints.window-width.Xl', 1280));
+        return (
+            $w >= config('breakpoints.window-width.Lg', 1024)
+            && $w < config('breakpoints.window-width.Xl', 1280)
+        );
     }
 }
 
@@ -86,8 +96,10 @@ if (!function_exists('windowXl')) {
     function windowXl(): bool
     {
         $w = session('windowW');
-        return ($w >= config('breakpoints.window-width.Xl', 1280))
-            && ($w < config('breakpoints.window-width.2xl', 1536));
+        return (
+            $w >= config('breakpoints.window-width.Xl', 1280)
+            && $w < config('breakpoints.window-width.2xl', 1536)
+        );
     }
 }
 

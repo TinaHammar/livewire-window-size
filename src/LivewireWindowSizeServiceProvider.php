@@ -9,22 +9,14 @@ use Illuminate\Support\ServiceProvider;
 
 class LivewireWindowSizeServiceProvider extends ServiceProvider
 {
-    /**
-     * Register services.
-     *
-     * @return void
-     */
-    public function register()
+
+    public function register(): void
     {
         $this->mergeConfigFrom(__DIR__ . '/../config/breakpoints.php', 'breakpoints');
     }
 
-    /**
-     * Bootstrap services.
-     *
-     * @return void
-     */
-    public function boot()
+
+    public function boot(): void
     {
         $this->publishes([__DIR__ . '/../config/breakpoints.php' => config_path('breakpoints.php')], 'livewire-window-size');
         $this->loadViewsFrom(__DIR__ . '/../resources/', 'breakpoints');
@@ -33,54 +25,42 @@ class LivewireWindowSizeServiceProvider extends ServiceProvider
         $this->bladeDirectives();
     }
 
-    protected function bladeDirectives()
+    protected function bladeDirectives(): void
     {
-        Blade::if('windowWidthLessThan', function ($value) {
+        Blade::if('windowWidthLessThan', static function ($value) {
             return windowWidthLessThan($value);
         });
 
-        Blade::if('windowWidthGreaterThan', function ($value) {
+        Blade::if('windowWidthGreaterThan', static function ($value) {
             return windowWidthGreaterThan($value);
         });
 
-        Blade::if('windowWidthBetween', function ($expression) {
+        Blade::if('windowWidthBetween', static function (...$expression) {
             return windowWidthBetween($expression);
         });
 
-        Blade::if('windowHeightLessThan', function ($value) {
+        Blade::if('windowHeightLessThan', static function ($value) {
             return windowHeightLessThan($value);
         });
 
-        Blade::if('windowHeightGreaterThan', function ($value) {
+        Blade::if('windowHeightGreaterThan', static function ($value) {
             return windowHeightGreaterThan($value);
         });
 
-        Blade::if('windowHeightBetween', function ($expression) {
+        Blade::if('windowHeightBetween', static function (...$expression) {
             return windowHeightBetween($expression);
         });
 
-        Blade::if('windowXs', function () {
-            return windowXs();
-        });
+        Blade::if('windowXs', static fn () => windowXs());
 
-        Blade::if('windowSm', function () {
-            return windowSm();
-        });
+        Blade::if('windowSm', static fn () => windowSm());
 
-        Blade::if('windowMd', function () {
-            return windowMd();
-        });
+        Blade::if('windowMd', static fn () => windowMd());
 
-        Blade::if('windowLg', function () {
-            return windowLg();
-        });
+        Blade::if('windowLg', static fn () => windowLg());
 
-        Blade::if('windowXl', function () {
-            return windowXl();
-        });
+        Blade::if('windowXl', static fn () => windowXl());
 
-        Blade::if('window2xl', function () {
-            return window2xl();
-        });
+        Blade::if('window2xl', static fn () => window2xl());
     }
 }
