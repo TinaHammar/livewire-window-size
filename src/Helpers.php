@@ -2,6 +2,16 @@
 
 use Illuminate\Support\Arr;
 
+if (! function_exists('mobileDevice')) {
+    function mobileDevice(): bool
+    {
+        return (bool) preg_match(
+            '/(android|avantgo|blackberry|bolt|boost|cricket|docomo|fone|hiptop|mini|iphone|ipad|ipod|j2me|java|midp|mmp|netfront|opera mini|palm|phone|p(ixi|re)\/|plucker|pocket|psp|series([46])0|symbian|treo|up\.(browser|link)|vodafone|wap|windows (ce|phone)|xda|xiino)/i',
+            request()?->header('User-Agent')
+        );
+    }
+}
+
 if (!function_exists('windowWidthLessThan')) {
     function windowWidthLessThan(int $value): bool
     {
