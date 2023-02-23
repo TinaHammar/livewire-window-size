@@ -5,7 +5,7 @@ An example to show the purpose of this package:
 ```php 
 <?php
 
-if(windowXs()) {
+if(windowXs() || mobileDevice()) {
  //execute a tiny Eloquent query and return a minimalistic view
 }
 if(window2xl()) {
