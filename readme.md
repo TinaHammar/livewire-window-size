@@ -118,6 +118,9 @@ Example
 ## Helpers
 Same name as Blade directives
 ```php
+//Mobile device detection based on request header.
+mobileDevice()
+
 //Browser width, with example values
 windowWidthLessThan(400)
 windowWidthGreaterThan(399)
