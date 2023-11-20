@@ -1,7 +1,7 @@
 <div class="hidden display-contents"
      x-data="{
-        width: @entangle('width'),
-        height: @entangle('height'),
+        width: @entangle('width').live,
+        height: @entangle('height').live,
         update() {
             this.width = ( window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth )
             this.height = ( window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight )
