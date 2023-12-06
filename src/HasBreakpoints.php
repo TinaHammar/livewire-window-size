@@ -2,7 +2,6 @@
 
 namespace Tanthammar\LivewireWindowSize;
 
-
 trait HasBreakpoints
 {
     protected array $breakpoints = [];

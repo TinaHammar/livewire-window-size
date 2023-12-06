@@ -7,6 +7,7 @@ use Livewire\Component;
 class WindowSize extends Component
 {
     public int $width;
+
     public int $height;
 
     public function mount()
@@ -17,12 +18,16 @@ class WindowSize extends Component
 
     public function updatedWidth(int $size): void
     {
-        if(is_int($size) && $size > 0) session(['windowW' => $size]);
+        if (is_int($size) && $size > 0) {
+            session(['windowW' => $size]);
+        }
     }
 
     public function updatedHeight(int $size): void
     {
-        if(is_int($size) && $size > 0) session(['windowH' => $size]);
+        if (is_int($size) && $size > 0) {
+            session(['windowH' => $size]);
+        }
     }
 
     public function render()
