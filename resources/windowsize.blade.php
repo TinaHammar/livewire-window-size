@@ -12,7 +12,7 @@
 >
     {{-- dev test :) --}}
     {{-- <div x-cloak>
-        <button class="p-4 rounded bg-indigo-500 text-white" x-on:click="$wire.call('render')">Click to trigger a
+        <button class="p-4 rounded bg-indigo-500 text-white" x-on:click="$wire.$call('render')">Click to trigger a
             request
         </button>
         <p>LivewireW: {{$width}}</p>

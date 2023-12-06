@@ -2,19 +2,17 @@
 
 namespace Tanthammar\LivewireWindowSize;
 
-include_once('Helpers.php');
+include_once 'Helpers.php';
 
 use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\ServiceProvider;
 
 class LivewireWindowSizeServiceProvider extends ServiceProvider
 {
-
     public function register(): void
     {
         $this->mergeConfigFrom(__DIR__ . '/../config/breakpoints.php', 'breakpoints');
     }
-
 
     public function boot(): void
     {
