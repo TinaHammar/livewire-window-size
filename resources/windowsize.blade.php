@@ -2,9 +2,32 @@
      x-data="{
         width: @entangle('width').live,
         height: @entangle('height').live,
+
+         getMinNonZeroValue(values) {
+            // Filter out zero values
+            const nonZeroValues = values.filter(value => value > 0);
+            // Return the minimum value, or 0 if all are zero
+            return nonZeroValues.length ? Math.min(...nonZeroValues) : 0;
+        },
+
         update() {
-            this.width = ( window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth )
-            this.height = ( window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight )
+            // Get all three width values
+            const widthValues = [
+                window.innerWidth,
+                document.documentElement.clientWidth,
+                document.body.clientWidth
+            ];
+
+            // Get all three height values
+            const heightValues = [
+                window.innerHeight,
+                document.documentElement.clientHeight,
+                document.body.clientHeight
+            ];
+
+            // Set width and height to the minimum non-zero value
+            this.width = this.getMinNonZeroValue(widthValues);
+            this.height = this.getMinNonZeroValue(heightValues);
         },
     }"
      x-init="update()"
