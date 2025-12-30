@@ -10,7 +10,7 @@ class WindowSize extends Component
 
     public int $height;
 
-    public function mount()
+    public function mount(): void
     {
         $this->width = session('windowW', 0);
         $this->height = session('windowH', 0);
@@ -18,19 +18,19 @@ class WindowSize extends Component
 
     public function updatedWidth(int $size): void
     {
-        if (is_int($size) && $size > 0) {
+        if ($size > 0) {
             session(['windowW' => $size]);
         }
     }
 
     public function updatedHeight(int $size): void
     {
-        if (is_int($size) && $size > 0) {
+        if ($size > 0) {
             session(['windowH' => $size]);
         }
     }
 
-    public function render()
+    public function render(): \Illuminate\View\View
     {
         return view('breakpoints::windowsize');
     }

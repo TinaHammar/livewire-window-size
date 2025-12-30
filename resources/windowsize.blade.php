@@ -3,8 +3,10 @@
         width: @entangle('width').live,
         height: @entangle('height').live,
         update() {
-            this.width = ( window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth )
-            this.height = ( window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight )
+            const widths = [window.innerWidth, document.documentElement.clientWidth, document.body.clientWidth].filter(w => w > 0)
+            const heights = [window.innerHeight, document.documentElement.clientHeight, document.body.clientHeight].filter(h => h > 0)
+            this.width = widths.length ? Math.min(...widths) : 0
+            this.height = heights.length ? Math.min(...heights) : 0
         },
     }"
      x-init="update()"
