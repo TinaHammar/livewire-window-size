@@ -16,16 +16,16 @@ class WindowSize extends Component
         $this->height = session('windowH', 0);
     }
 
-    public function updatedWidth(int $size): void
+    public function updatedWidth(array|int $size): void
     {
-        if ($size > 0) {
+        if (is_int($size) && $size > 0) {
             session(['windowW' => $size]);
         }
     }
 
-    public function updatedHeight(int $size): void
+    public function updatedHeight(array|int $size): void
     {
-        if ($size > 0) {
+        if (is_int($size) && $size > 0) {
             session(['windowH' => $size]);
         }
     }
