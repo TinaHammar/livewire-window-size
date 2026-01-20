@@ -12,8 +12,10 @@ class WindowSize extends Component
 
     public function mount()
     {
-        $this->width = session('windowW', 0);
-        $this->height = session('windowH', 0);
+        $w = session('windowW', 0);
+        $h = session('windowH', 0);
+        $this->width = is_int($w) && $w > 0 ? $w : 0;
+        $this->height = is_int($h) && $h > 0 ? $h : 0;
     }
 
     public function updatedWidth(int $size): void
