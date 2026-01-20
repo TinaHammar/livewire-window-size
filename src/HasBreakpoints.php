@@ -6,7 +6,7 @@ trait HasBreakpoints
 {
     protected array $breakpoints = [];
 
-    public function mountHasBreakpoints()
+    public function mountHasBreakpoints(): void
     {
         $this->setBreakpoints(config('livewire-window-size.breakpoints', []));
     }

@@ -25,42 +25,42 @@ class LivewireWindowSizeServiceProvider extends ServiceProvider
 
     protected function bladeDirectives(): void
     {
-        Blade::if('windowWidthLessThan', static function ($value) {
+        Blade::if('windowWidthLessThan', static function ($value): bool {
             return windowWidthLessThan($value);
         });
 
-        Blade::if('windowWidthGreaterThan', static function ($value) {
+        Blade::if('windowWidthGreaterThan', static function ($value): bool {
             return windowWidthGreaterThan($value);
         });
 
-        Blade::if('windowWidthBetween', static function (...$expression) {
+        Blade::if('windowWidthBetween', static function (...$expression): bool {
             return windowWidthBetween($expression);
         });
 
-        Blade::if('windowHeightLessThan', static function ($value) {
+        Blade::if('windowHeightLessThan', static function ($value): bool {
             return windowHeightLessThan($value);
         });
 
-        Blade::if('windowHeightGreaterThan', static function ($value) {
+        Blade::if('windowHeightGreaterThan', static function ($value): bool {
             return windowHeightGreaterThan($value);
         });
 
-        Blade::if('windowHeightBetween', static function (...$expression) {
+        Blade::if('windowHeightBetween', static function (...$expression): bool {
             return windowHeightBetween($expression);
         });
 
-        Blade::if('windowXs', static fn () => windowXs());
+        Blade::if('windowXs', static fn (): bool => windowXs());
 
-        Blade::if('windowSm', static fn () => windowSm());
+        Blade::if('windowSm', static fn (): bool => windowSm());
 
-        Blade::if('windowMd', static fn () => windowMd());
+        Blade::if('windowMd', static fn (): bool => windowMd());
 
-        Blade::if('windowLg', static fn () => windowLg());
+        Blade::if('windowLg', static fn (): bool => windowLg());
 
-        Blade::if('windowXl', static fn () => windowXl());
+        Blade::if('windowXl', static fn (): bool => windowXl());
 
-        Blade::if('window2xl', static fn () => window2xl());
+        Blade::if('window2xl', static fn (): bool => window2xl());
 
-        Blade::if('mobileDevice', static fn () => mobileDevice());
+        Blade::if('mobileDevice', static fn (): bool => mobileDevice());
     }
 }
