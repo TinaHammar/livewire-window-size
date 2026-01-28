@@ -6,9 +6,9 @@ use Livewire\Component;
 
 class WindowSize extends Component
 {
-    public int $width;
+    public int|array $width;
 
-    public int $height;
+    public int|array $height;
 
     public function mount(): void
     {
