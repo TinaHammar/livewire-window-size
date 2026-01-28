@@ -30,8 +30,8 @@ There is a Laravel/VanillaJS version of this package. [Link >>>](https://github.
 
 
 ## Description
-The main purpose of this package is not to avoid duplicated html, 
-but to avoid unnecessary server side code execution, just to render content that will never be seen.
+The main purpose of this package is to avoid unnecessary server side code execution, 
+duplicated html and rendering content that will never be seen.
 
 * AlpineJS syncs the browsers inner `width` and `height`, in realtime (debounced 750ms), when the browser window is resized. 
 * The corresponding Livewire component will store the values to the Laravel `Session`.
